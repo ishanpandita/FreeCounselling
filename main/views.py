@@ -3,8 +3,6 @@ from .models import CounsellingEnquiry
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.contrib import messages
-import os
-from email.mime.image import MIMEImage
 
 def home(request):
     if request.method == "POST":
@@ -39,7 +37,7 @@ def home(request):
             <br>
             <p>Best regards,<br><b>Free Counselling Team</b></p>
             <br>
-            <img src="cid:logo" alt="Free Counselling Logo" width="64" height="64"/>
+            <img src="https://freecounselling.life/static/images/logo(2).png" width="64" height="64"/>
           </body>
         </html>
         """
@@ -72,7 +70,7 @@ def home(request):
             <p><b>Counselling Type:</b> {counselling_type}</p>
             <p><b>Message:</b><br>{message}</p>
             <br>
-            <img src="cid:logo" alt="Free Counselling Logo" width="64" height="64"/>
+            <img src="https://freecounselling.life/static/images/logo(2).png" width="64" height="64"/>
           </body>
         </html>
         """
@@ -84,21 +82,6 @@ def home(request):
             to=[settings.DEFAULT_FROM_EMAIL],
         )
         admin_email.attach_alternative(admin_html, "text/html")
-
-        # === Attach logo inline (shared for both emails) ===
-        logo_path = os.path.join(settings.BASE_DIR, "main/static/images/logo(2).png")
-        if os.path.exists(logo_path):
-            with open(logo_path, "rb") as f:
-                logo = MIMEImage(f.read())
-                logo.add_header("Content-ID", "<logo>")
-                # Attach separately to both emails
-                user_email.attach(logo)
-            
-            # Re-open file for admin (since stream is consumed above)
-            with open(logo_path, "rb") as f:
-                logo_admin = MIMEImage(f.read())
-                logo_admin.add_header("Content-ID", "<logo>")
-                admin_email.attach(logo_admin)
 
         # Send emails
         user_email.send()
