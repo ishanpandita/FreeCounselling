@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = "True"
 
 # Hosts allowed to access the app
 ALLOWED_HOSTS = [
@@ -103,6 +103,6 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "counselling.live@gmail.com")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "ccumytuivffaauya")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")  # no default
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")  # no default
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
