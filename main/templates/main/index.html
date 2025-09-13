@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Counselling</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2322c55e'/><text x='32' y='40' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='28' fill='%23001b0f' font-weight='700'>FC</text></svg>">
+  <meta name="description" content="Confidential, compassionate and professional counselling services. Contact us for free counselling support.">
+  <link rel="canonical" href="freecounselling.life">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#22c55e">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Counselling | Confidential Support">
+  <meta property="og:description" content="Professional counselling at no cost: career, mental health, relationships, academics and more.">
+  <meta property="og:url" content="freecounselling.life">
+  <meta property="og:image" content="https://freecounselling.life/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Counselling | Confidential Support">
+  <meta name="twitter:description" content="Professional counselling at no cost: career, mental health, relationships, academics and more.">
+  <meta name="twitter:image" content="https://freecounselling.life/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --brand: #22c55e;
+      --brand-700: #15803d;
+      --ring: rgba(34,197,94,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(34,197,94,0.15), transparent 55%),
+                  radial-gradient(900px 600px at 100% 10%, rgba(59,130,246,0.10), transparent 60%),
+                  var(--bg);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .brand-badge {
+      color: white;
+      background: linear-gradient(135deg, var(--brand), #10b981);
+      padding: 4px 8px;
+      border-radius: 8px;
+      margin-right: 8px;
+      font-size: 12px;
+    }
+    .nav-links a {
+      margin-left: 16px;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: yellow; }
+
+    .hero { padding: 72px 0 32px; }
+    .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px; align-items: center; }
+    .hero h1 { font-size: 42px; line-height: 1.1; margin: 0 0 12px; }
+    .hero p { color: var(--muted); margin: 0 0 20px; }
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--brand), #10b981);
+      color: #001b0f;
+      font-weight: 700;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(34,197,94,0.08), transparent 60%), var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .hero-tile {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .hero-tile b { display: block; margin-bottom: 6px; }
+    .hero-tile span { color: var(--muted); font-size: 14px; }
+
+    .section { padding: 56px 0; }
+    .section h2 { margin: 0 0 12px; font-size: 28px; }
+    .section p.lead { color: var(--muted); margin: 0 0 24px; }
+
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 16px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover { transform: translateY(-2px); border-color: rgba(34,197,94,0.45); }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    form {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .field { margin-bottom: 12px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      color: var(--text);
+      background: #0b1220;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 4px var(--ring); border-color: var(--brand); }
+    textarea { min-height: 120px; resize: vertical; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; font-weight: 700; cursor: pointer; border: 0; width: 100%;
+      padding: 12px; border-radius: 10px; color: #001b0f;
+      background: linear-gradient(135deg, var(--brand), #10b981);
+    }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    .success {
+      padding: 12px;
+      border: 1px solid rgba(34,197,94,0.45);
+      background: rgba(34,197,94,0.08);
+      color: #bbf7d0;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    footer { 
+        border-top: 1px solid rgba(255,255,255,0.06); 
+        padding: 16px 0; 
+        color: var(--muted); 
+        font-size: 14px; 
+        text-align: center;    
+    }
+
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .contact { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-badge">FREE</span> Counselling
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Confidential counselling, at no cost</h1>
+          <p>Professional support for whatever you are going through. Choose a counselling type below and reach out — we will contact you shortly.</p>
+          <a class="cta" href="#contact">Book a free consultation</a>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="hero-tile"><b>Career</b><span>Clarity for your next steps</span></div>
+          <div class="hero-tile"><b>Mental Health</b><span>Anxiety, stress, burnout</span></div>
+          <div class="hero-tile"><b>Relationships</b><span>Communication and trust</span></div>
+          <div class="hero-tile"><b>Academic</b><span>Study skills and focus</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Types of counselling we provide</h2>
+        <p class="lead">All sessions are private and confidential. Choose what best fits your needs.</p>
+        <div class="grid">
+          <div class="card"><h3>Career Counselling</h3><p>Resume, interviews, role fit, career transitions and planning.</p></div>
+          <div class="card"><h3>Mental Health</h3><p>Stress, anxiety, mood regulation, building healthy habits.</p></div>
+          <div class="card"><h3>Relationship</h3><p>Couples and interpersonal challenges, conflict resolution.</p></div>
+          <div class="card"><h3>Academic</h3><p>Study strategies, exam preparation, overcoming procrastination.</p></div>
+          <div class="card"><h3>Family</h3><p>Parenting support, family dynamics, communication.</p></div>
+          <div class="card"><h3>Financial Wellness</h3><p>Budgeting, debt stress, planning for goals.</p></div>
+          <div class="card"><h3>Addiction Support</h3><p>Relapse prevention, accountability, supportive resources.</p></div>
+          <div class="card"><h3>Trauma-informed</h3><p>Stabilization, coping skills, safe processing at your pace.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Contact us</h2>
+          <p class="lead">Send your details and preferred counselling type. We will reach out soon.</p>
+
+          <!-- Django Messages -->
+          {% if messages %}
+            {% for message in messages %}
+              <div class="success">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+
+          <form method="POST" action="">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+
+            <label for="counselling_type">Counselling Type:</label>
+            <select id="counselling_type" name="counselling_type" required>
+              <option value="career">Career</option>
+              <option value="mental_health">Mental Health</option>
+              <option value="relationship">Relationship</option>
+              <option value="academic">Academic</option>
+              <option value="family">Family</option>
+              <option value="financial">Financial Wellness</option>
+              <option value="addiction">Addiction Support</option>
+              <option value="trauma">Trauma-informed</option>
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Explain in appropriate way so that we could undestand you easily because we have large number of requests to handle "></textarea>
+
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>How it works</h3>
+            <p style="margin-top:6px;">Submit the form with your details. A counsellor will get in touch by phone or email to schedule a free session and share next steps.</p>
+            <p style="margin-top:12px; color: var(--muted);">Typical response time: Due to high demand, we may take sometime to get back to you.</p>
+          </div>
+          <div class="card" style="margin-top:12px;">
+            <h3>Need urgent help?</h3>
+            <p class="muted" style="margin-top:6px;">If you are in crisis or danger, please contact your local emergency services immediately.
+                <br>
+                <br>
+                112: National Emergency Number for police, fire, and ambulance services.
+                <br>
+                100: Police.
+                <br> 
+                102: Ambulance.
+                <br> 
+                1091: Women Helpline.
+                <br> 
+                181: Women Helpline for Domestic Abuse
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer >
+    <div class="container">
+      © 2024 Free Counselling. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
