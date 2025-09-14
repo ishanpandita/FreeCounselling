@@ -105,4 +105,4 @@ SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False  # keep False to really send
 SENDGRID_ECHO_TO_STDOUT = True
 
-DEFAULT_FROM_EMAIL = "counselling.live@gmail.com"  # can still use your Gmail as from address
+DEFAULT_FROM_EMAIL = "Free Counselling <counselling.live@gmail.com>"  # can still use your Gmail as from address
