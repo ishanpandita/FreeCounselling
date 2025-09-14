@@ -12,6 +12,7 @@ def home(request):
         counselling_type = request.POST.get("counselling_type")
         message = request.POST.get("message")
 
+        # Save enquiry to database
         CounsellingEnquiry.objects.create(
             name=name,
             email=email,
@@ -83,7 +84,7 @@ def home(request):
         )
         admin_email.attach_alternative(admin_html, "text/html")
 
-        # Send emails
+        # Send both emails
         user_email.send()
         admin_email.send()
 
