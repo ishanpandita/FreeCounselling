@@ -8,11 +8,11 @@ urlpatterns = [
     
     # Sitemap and robots.txt
     path("sitemap.xml", TemplateView.as_view(
-        template_name="sitemap.xml",
+        template_name="main/sitemap.xml",
         content_type="application/xml"
     )),
     path("robots.txt", TemplateView.as_view(
-        template_name="robots.txt",
+        template_name="main/robots.txt",
         content_type="text/plain"
     )),
 ]
