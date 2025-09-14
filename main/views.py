@@ -87,7 +87,7 @@ def home(request):
         user_email.send()
         admin_email.send()
 
-        messages.success(request, "✅ Your form has been submitted. Please check your email.")
+        messages.success(request, "✅ Your form has been submitted. Please check your email/spam.")
         return redirect("/")  # refresh page after saving
 
     return render(request, "main/index.html")
