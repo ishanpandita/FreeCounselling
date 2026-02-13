@@ -100,18 +100,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Email settings
 # Email settings (Gmail SMTP)
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-EMAIL_HOST = "smtp-relay.brevo.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-EMAIL_HOST_USER = "counselling.live@gmail.com"
-EMAIL_HOST_PASSWORD = os.environ.get("BREVO_SMTP_KEY")
-
-DEFAULT_FROM_EMAIL = "Free Counselling <counselling.live@gmail.com>"
-
-
-
-DEFAULT_FROM_EMAIL = "Free Counselling <counselling.live@gmail.com>"  # can still use your Gmail as from address
