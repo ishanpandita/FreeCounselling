@@ -7,10 +7,11 @@ import os
 
 def send_email_via_brevo(to_email, subject, html_content):
     url = "https://api.brevo.com/v3/smtp/email"
+    api_key = os.environ.get("BREVO_API_KEY")
 
     headers = {
         "accept": "application/json",
-        "api-key": os.environ.get("BREVO_API_KEY"),
+        "api-key": str(api_key),
         "content-type": "application/json"
     }
 
@@ -19,15 +20,20 @@ def send_email_via_brevo(to_email, subject, html_content):
             "name": "Free Counselling",
             "email": "counselling.live@gmail.com"
         },
-        "to": [
-            {"email": to_email}
-        ],
+        "to": [{"email": to_email}],
         "subject": subject,
         "htmlContent": html_content
     }
 
-    response = requests.post(url, json=data, headers=headers)
-    return response.status_code
+    try:
+        response = requests.post(url, json=data, headers=headers)
+        # This print will show up in your Vercel Dashboard -> Logs
+        print(f"BREVO STATUS: {response.status_code}")
+        print(f"BREVO RESPONSE: {response.text}")
+        return response.status_code
+    except Exception as e:
+        print(f"CONNECTION ERROR: {str(e)}")
+        return 500
 
 
 def home(request):
