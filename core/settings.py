@@ -14,27 +14,21 @@ SECRET_KEY = os.environ.get(
     "SECRET_KEY", "django-insecure-8wt*jr(xl%*jf-c84x%9(1-#$jn8#ups&2-2^gvrictf9o2!$6"
 )
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False") == "True"
-
 # Hosts allowed to access the app
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "freecounselling.onrender.com",
-    "freecounselling.life",        # Bare domain
-    "www.freecounselling.life",    # <--- ADD THIS ONE
-    ".vercel.app",
-    "free-counselling.vercel.app"
+# core/settings.py
+
+# This allows the site to load regardless of which Vercel/GoDaddy URL is used
+ALLOWED_HOSTS = ['*']
+
+# This ensures the form works on your custom domain
+CSRF_TRUSTED_ORIGINS = [
+    "https://freecounselling.life",
+    "https://www.freecounselling.life",
+    "https://*.vercel.app"
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://free-counselling.vercel.app",
-    "https://*.vercel.app",
-    "https://*.now.sh",
-    "https://freecounselling.life",
-    "https://www.freecounselling.life"
-]
+# Double check DEBUG is False for production
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # Application definition
 INSTALLED_APPS = [
