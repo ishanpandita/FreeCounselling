@@ -38,7 +38,9 @@ def home(request):
         counselling_type = request.POST.get("counselling_type")
         message_text = request.POST.get("message")
 
-        # Save to database
+        # --- DATABASE SECTION (DISABLED FOR VERCEL) ---
+        # Vercel is read-only. We skip saving to SQLite to prevent 500 Errors.
+        """
         CounsellingEnquiry.objects.create(
             name=name,
             email=email,
@@ -46,10 +48,10 @@ def home(request):
             counselling_type=counselling_type,
             message=message_text
         )
+        """
 
         # === USER EMAIL ===
         user_subject = "Thank you for contacting Free Counselling"
-
         user_html = f"""
         <html>
           <body style="font-family: Arial, sans-serif; color:#333;">
@@ -63,12 +65,10 @@ def home(request):
           </body>
         </html>
         """
-
         send_email_via_brevo(email, user_subject, user_html)
 
         # === ADMIN EMAIL ===
         admin_subject = "New counselling enquiry received"
-
         admin_html = f"""
         <html>
           <body style="font-family: Arial, sans-serif; color:#333;">
@@ -83,7 +83,6 @@ def home(request):
           </body>
         </html>
         """
-
         send_email_via_brevo("counselling.live@gmail.com", admin_subject, admin_html)
 
         messages.success(request, "✅ Your form has been submitted. Please check your email/spam.")

@@ -26,6 +26,12 @@ ALLOWED_HOSTS = [
     ".vercel.app",
     "free-counselling.vercel.app"
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://free-counselling.vercel.app",
+    "https://*.vercel.app",
+    "https://*.now.sh",
+    "https://freecounselling.life"
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -102,3 +108,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Email settings
 # Email settings (Gmail SMTP)
+
+# Tell Django to store messages in the browser cookie instead of the database
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
