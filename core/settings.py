@@ -22,10 +22,12 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "freecounselling.onrender.com",
-    "freecounselling.life",
+    "freecounselling.life",        # Bare domain
+    "www.freecounselling.life",    # <--- ADD THIS ONE
     ".vercel.app",
     "free-counselling.vercel.app"
 ]
+
 CSRF_TRUSTED_ORIGINS = [
     "https://free-counselling.vercel.app",
     "https://*.vercel.app",
