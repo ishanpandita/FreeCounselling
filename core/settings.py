@@ -23,6 +23,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "freecounselling.onrender.com",
     "freecounselling.life",
+    ".vercel.app",
+    "free-counselling.vercel.app"
 ]
 
 # Application definition
