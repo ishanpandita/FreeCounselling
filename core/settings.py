@@ -30,7 +30,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://free-counselling.vercel.app",
     "https://*.vercel.app",
     "https://*.now.sh",
-    "https://freecounselling.life"
+    "https://freecounselling.life",
+    "https://www.freecounselling.life"
 ]
 
 # Application definition
